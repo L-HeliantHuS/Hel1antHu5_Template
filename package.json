@@ -1,16 +1,48 @@
 {
   "name": "electron_template",
   "version": "1.0.0",
-  "description": "",
+  "description": "Hel1antHu5 template",
   "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "electron ."
+    "start": "electron .",
+    "package": "electron-builder --win"
+  },
+  "build": {
+    "appId": "com.hel1anthu5.template",
+    "productName": "Hel1antHu5 Template",
+    "directories": {
+      "output": "build"
+    },
+    "electronDownload": {
+      "mirror": "http://npm.taobao.org/mirrors/electron/",
+      "strictSSL": true
+    },
+    "files": [
+      "images/",
+      "main.js",
+      "preload.js"
+    ],
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createStartMenuShortcut": true,
+      "createDesktopShortcut": true
+    },
+    "win": {
+      "icon": "images/logo.png",
+      "target": [
+        {
+          "target": "nsis"
+        }
+      ]
+    }
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "electron": "^29.1.5"
+    "electron": "^29.1.5",
+    "electron-builder": "^24.13.3"
   }
 }

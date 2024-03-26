@@ -15,7 +15,7 @@ function createWindow () {
 
 
   // tray 系统托盘
-  tray = new Tray(join(__dirname, 'images/logo.jpg'));
+  tray = new Tray(join(__dirname, 'images/logo.png'));
   // 点击托盘图标显示应用
   tray.on("click", () => {
       if (win.isVisible()) {
